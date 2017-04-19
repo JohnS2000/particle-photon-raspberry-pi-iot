@@ -215,6 +215,25 @@ Get this from the settings area when logged into <a href="http://particle.io/bui
     sendToParticle(RYGA')
 }">
 
+void changeLights(){
+    // green off, yellow on for 3 seconds
+    digitalWrite(green, LOW);
+    digitalWrite(yellow, HIGH);
+    delay(4000);
+
+    // turn off yellow, then turn red on for 5 seconds
+    digitalWrite(yellow, LOW);
+    digitalWrite(red, HIGH);
+    delay(2000);
+    
+    // turn off red and yellow, then turn on green
+    digitalWrite(yellow, LOW);
+    digitalWrite(red, LOW);
+    digitalWrite(green, HIGH);
+    delay(4000);
+}
+
+
 <input type="button" value="digitalWrite(D1,LOW);" onClick="{
     sendToParticle('digitalWrite(D1,LOW);')
 }"><br> 
